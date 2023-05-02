@@ -1,0 +1,12 @@
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.Entity\bin\Debug\net7.0\MoviesApp.Entity.deps.json
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.Entity\bin\Debug\net7.0\MoviesApp.Entity.dll
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.Entity\bin\Debug\net7.0\MoviesApp.Entity.pdb
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.Entity\obj\Debug\net7.0\MoviesApp.Entity.csproj.AssemblyReference.cache
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.Entity\obj\Debug\net7.0\MoviesApp.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.Entity\obj\Debug\net7.0\MoviesApp.Entity.AssemblyInfoInputs.cache
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.Entity\obj\Debug\net7.0\MoviesApp.Entity.AssemblyInfo.cs
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.Entity\obj\Debug\net7.0\MoviesApp.Entity.csproj.CoreCompileInputs.cache
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.Entity\obj\Debug\net7.0\MoviesApp.Entity.dll
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.Entity\obj\Debug\net7.0\refint\MoviesApp.Entity.dll
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.Entity\obj\Debug\net7.0\MoviesApp.Entity.pdb
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.Entity\obj\Debug\net7.0\ref\MoviesApp.Entity.dll

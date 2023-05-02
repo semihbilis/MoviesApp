@@ -1,0 +1,17 @@
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\bin\Debug\net7.0\MoviesApp.DataAccess.deps.json
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\bin\Debug\net7.0\MoviesApp.DataAccess.runtimeconfig.json
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\bin\Debug\net7.0\MoviesApp.DataAccess.dll
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\bin\Debug\net7.0\MoviesApp.DataAccess.pdb
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\bin\Debug\net7.0\MoviesApp.Entity.dll
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\bin\Debug\net7.0\MoviesApp.Entity.pdb
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\obj\Debug\net7.0\MoviesApp.DataAccess.csproj.AssemblyReference.cache
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\obj\Debug\net7.0\MoviesApp.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\obj\Debug\net7.0\MoviesApp.DataAccess.AssemblyInfoInputs.cache
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\obj\Debug\net7.0\MoviesApp.DataAccess.AssemblyInfo.cs
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\obj\Debug\net7.0\MoviesApp.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\obj\Debug\net7.0\MoviesApp.DataAccess.csproj.CopyComplete
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\obj\Debug\net7.0\MoviesApp.DataAccess.dll
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\obj\Debug\net7.0\refint\MoviesApp.DataAccess.dll
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\obj\Debug\net7.0\MoviesApp.DataAccess.pdb
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\obj\Debug\net7.0\MoviesApp.DataAccess.genruntimeconfig.cache
+C:\Users\aDell\source\repos\MoviesApp\MoviesApp.DataAccess\obj\Debug\net7.0\ref\MoviesApp.DataAccess.dll
