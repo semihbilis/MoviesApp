@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MoviesApp.API</name>
+    </assembly>
+    <members>
+        <member name="M:MoviesApp.API.Controllers.AutoCreatedMoviesController.GetMovies">
+            <summary>
+            Swagger documentation test text.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MoviesApp.API.Controllers.MovieController.SyncDatabaseAsync">
+            <summary>
+            Clear
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

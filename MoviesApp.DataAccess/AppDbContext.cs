@@ -11,8 +11,7 @@ namespace MoviesApp.DataAccess
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            //optionsBuilder.UseSqlServer("Server=.;Database=MoviesApp;Trusted_Connection=True;TrustServerCertificate=True;");
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MoviesApp;Integrated Security=True;Connect Timeout=30");
+            optionsBuilder.UseSqlServer($"Server=.;Database=MoviesApp;Trusted_Connection=True;TrustServerCertificate=True;");
         }
     }
 }

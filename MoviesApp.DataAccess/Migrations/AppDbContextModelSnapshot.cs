@@ -31,48 +31,68 @@ namespace MoviesApp.DataAccess.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("BackdropPath")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasAnnotation("Relational:JsonPropertyName", "backdrop_path");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("CreatedById")
                         .HasColumnType("int");
 
                     b.Property<string>("GenreIds")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasAnnotation("Relational:JsonPropertyName", "genre_ids");
 
                     b.Property<bool>("IsAdult")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasAnnotation("Relational:JsonPropertyName", "adult");
 
                     b.Property<bool>("IsVideo")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasAnnotation("Relational:JsonPropertyName", "video");
 
                     b.Property<string>("OriginalLanguage")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasAnnotation("Relational:JsonPropertyName", "original_language");
 
                     b.Property<string>("OriginalTitle")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasAnnotation("Relational:JsonPropertyName", "original_title");
 
                     b.Property<string>("Overview")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasAnnotation("Relational:JsonPropertyName", "overview");
 
                     b.Property<int>("Popularity")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasAnnotation("Relational:JsonPropertyName", "popularity");
 
                     b.Property<string>("PosterPath")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasAnnotation("Relational:JsonPropertyName", "poster_path");
 
                     b.Property<DateTime>("ReleaseDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasAnnotation("Relational:JsonPropertyName", "release_date");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasAnnotation("Relational:JsonPropertyName", "title");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Movie");
                 });
 
             modelBuilder.Entity("MoviesApp.Entity.Vote", b =>
@@ -82,6 +102,9 @@ namespace MoviesApp.DataAccess.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("CreatedById")
                         .HasColumnType("int");
@@ -97,17 +120,20 @@ namespace MoviesApp.DataAccess.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
 
                     b.HasIndex("MovieId");
 
-                    b.ToTable("Votes");
+                    b.ToTable("Vote");
                 });
 
             modelBuilder.Entity("MoviesApp.Entity.Vote", b =>
                 {
                     b.HasOne("MoviesApp.Entity.Movie", "Movie")
-                        .WithMany("VoteList")
+                        .WithMany("Votes")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -117,7 +143,7 @@ namespace MoviesApp.DataAccess.Migrations
 
             modelBuilder.Entity("MoviesApp.Entity.Movie", b =>
                 {
-                    b.Navigation("VoteList");
+                    b.Navigation("Votes");
                 });
 #pragma warning restore 612, 618
         }
