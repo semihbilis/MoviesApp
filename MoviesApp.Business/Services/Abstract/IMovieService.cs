@@ -1,15 +1,16 @@
 ﻿using MoviesApp.DataAccess.Abstract;
 using MoviesApp.Entity;
+using System.Linq.Expressions;
 
 namespace MoviesApp.Business.Services.Abstract
 {
     public interface IMovieService
     {
-        IMovieRepository Repository { get; init; }
-        Task<bool> SyncDatabaseAsync();
-        IEnumerable<Movie> GetMovieList(int start, int limit);
+        Task<bool> ClearAndSyncDatabaseAsync();
+        IEnumerable<Movie> GetMovieList(int start = 0, int? limit = null, Expression<Func<Movie, bool>>? filter = null);
         Movie GetMovieById(int id);
-        Movie AddVoteToMovie(Movie movie);
+        bool DeleteMovieById(int id);
+        Movie Update(Movie movie);
         void RecommendSelectedMovie(Movie movie);
     }
 }

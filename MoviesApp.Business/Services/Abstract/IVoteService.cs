@@ -1,11 +1,10 @@
-﻿using MoviesApp.DataAccess.Abstract;
-using MoviesApp.Entity;
+﻿using MoviesApp.Entity;
 
 namespace MoviesApp.Business.Services.Abstract
 {
     public interface IVoteService
     {
-        public IVoteRepository Repository { get; init; }
-        Movie? GetMove(int voteId);
+        Movie? GetMovie(int voteId);
+        Vote AddVoteToMovie(int movieId, Vote vote);
     }
 }

@@ -4,13 +4,13 @@ namespace MoviesApp.DataAccess.Abstract
 {
     public interface IEntityRepository<T>
     {
-        IEnumerable<T> GetList(Expression<Func<T, bool>> filter = null);
+        IEnumerable<T> GetList(Expression<Func<T, bool>>? filter = null);
         T Get(Expression<Func<T, bool>> filter);
         T Add(T entity);
         void AddRange(IEnumerable<T> entities);
         T Update(T entity);
-        void Delete(T entity);
-        void DeleteAll();
+        bool Delete(int id);
+        bool DeleteAll();
         bool SaveChanges();
     }
 }

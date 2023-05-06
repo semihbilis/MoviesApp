@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MoviesApp.API</name>
+    </assembly>
+    <members>
+        <member name="M:MoviesApp.API.Controllers.AutoCreatedMoviesController.GetMovies">
+            <summary>
+            Swagger documentation test text.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MoviesApp.API.Controllers.MovieController">
+            <summary>
+            API for movie items
+            </summary>
+        </member>
+        <member name="M:MoviesApp.API.Controllers.MovieController.Update(MoviesApp.Entity.Movie)">
+            <summary>
+            Update movie
+            </summary>
+            <param name="movie">Movie</param>
+            <returns>Movie</returns>
+        </member>
+        <member name="M:MoviesApp.API.Controllers.MovieController.Delete(System.Int32)">
+            <summary>
+            Delete movie by id
+            </summary>
+            <param name="id">Movie Id</param>
+            <returns>Boolean</returns>
+        </member>
+        <member name="M:MoviesApp.API.Controllers.MovieController.Get(System.Int32)">
+            <summary>
+            Search movie by id
+            </summary>
+            <param name="id">Movie Id</param>
+            <returns>Movie</returns>
+        </member>
+        <member name="M:MoviesApp.API.Controllers.MovieController.GetPaginatedMovieList(MoviesApp.API.Models.MovieRequest)">
+            <summary>
+            Get paginted movie list
+            </summary>
+            <param name="movieRequest">Start, limit, search text properties</param>
+            <returns>IEnumerable</returns>
+        </member>
+        <member name="M:MoviesApp.API.Controllers.MovieController.SyncDatabaseAsync">
+            <summary>
+            Sync database with The Movie Datebase. Max page(20 items) is 53 in 38149. Item count 1040 in 762966
+            </summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="T:MoviesApp.API.Controllers.VoteController">
+            <summary>
+            API for vote
+            </summary>
+        </member>
+        <member name="M:MoviesApp.API.Controllers.VoteController.VoteToMovie(MoviesApp.API.Models.VoteAddRequest)">
+            <summary>
+            Vote to movie
+            </summary>
+            <param name="voteAddRequest">Movie id, point and vote</param>
+            <returns>Vote</returns>
+        </member>
+    </members>
+</doc>

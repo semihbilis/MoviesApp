@@ -12,9 +12,9 @@
         </member>
         <member name="M:MoviesApp.API.Controllers.MovieController.SyncDatabaseAsync">
             <summary>
-            Clear
+            Sync database with The Movie Datebase
             </summary>
-            <returns></returns>
+            <returns>IActionResult</returns>
         </member>
     </members>
 </doc>

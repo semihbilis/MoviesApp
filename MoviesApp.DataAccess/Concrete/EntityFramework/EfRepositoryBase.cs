@@ -22,15 +22,16 @@ namespace MoviesApp.DataAccess.Concrete.EntityFramework
         {
             var addedEntity = Context.Entry(entity);
             addedEntity.State = EntityState.Added;
-            Context.SaveChanges();
-            return entity;
+            bool isSuccess = SaveChanges();
+            return isSuccess ? entity : default;
         }
 
-        public void Delete(TEntity entity)
+        public bool Delete(int id)
         {
-            var deletedEntity = Context.Entry(entity);
-            deletedEntity.State = EntityState.Deleted;
-            Context.SaveChanges();
+            var deletedEntity = DbSet.Find(id);
+            if (deletedEntity != null)
+                DbSet.Remove(deletedEntity);
+            return SaveChanges();
         }
 
         public TEntity Get(Expression<Func<TEntity, bool>> filter)
@@ -47,12 +48,12 @@ namespace MoviesApp.DataAccess.Concrete.EntityFramework
         {
             var updatedEntity = Context.Entry(entity);
             updatedEntity.State = EntityState.Modified;
-            updatedEntity.Entity.UpdateDate = DateTime.Now;
-            Context.SaveChanges();
-            return entity;
+            updatedEntity.Entity.LastUpdateDate = DateTime.Now;
+            bool isSuccess = SaveChanges();
+            return isSuccess ? entity : default;
         }
 
-        public void DeleteAll() => DbSet.ExecuteDelete();
+        public bool DeleteAll() => DbSet.ExecuteDelete() > 0;
 
         public void AddRange(IEnumerable<TEntity> entities) => DbSet.AddRange(entities);
 

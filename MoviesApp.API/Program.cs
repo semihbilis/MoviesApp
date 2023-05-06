@@ -1,5 +1,7 @@
-﻿using MoviesApp.Business.Services.Abstract;
+﻿using Microsoft.AspNetCore.Mvc.Formatters;
+using MoviesApp.Business.Services.Abstract;
 using MoviesApp.Business.Services.Concrete;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,9 +11,6 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddSingleton<IMovieService, MovieService>();
-builder.Services.AddSingleton<IVoteService, VoteService>();
 builder.Services.AddSwaggerDocument(config =>
 {
     config.PostProcess = doc =>
@@ -26,6 +25,16 @@ builder.Services.AddSwaggerDocument(config =>
         };
     };
 });
+builder.Services.AddControllers(config =>
+{
+    config.OutputFormatters.RemoveType<SystemTextJsonOutputFormatter>();
+    config.OutputFormatters.Add(new SystemTextJsonOutputFormatter(new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.General)
+    {
+        ReferenceHandler = ReferenceHandler.Preserve
+    }));
+});
+builder.Services.AddSingleton<IMovieService, MovieService>();
+builder.Services.AddSingleton<IVoteService, VoteService>();
 
 var app = builder.Build();
 
@@ -41,6 +50,5 @@ app.UseAuthorization();
 app.MapControllers();
 app.UseOpenApi();
 app.UseSwaggerUI();
-//app.UseEndpoints(endpoints => endpoints.MapControllers());
 
 app.Run();

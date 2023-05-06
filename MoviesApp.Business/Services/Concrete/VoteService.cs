@@ -7,10 +7,24 @@ namespace MoviesApp.Business.Services.Concrete
 {
     public class VoteService : IVoteService
     {
-        public IVoteRepository Repository { get; init; }
+        private readonly IVoteRepository _Repository;
+        private readonly IMovieService _MovieService;
 
-        public VoteService() => Repository = new EfVoteRepository();
+        public VoteService(IMovieService movieService)
+        {
+            _MovieService = movieService;
+            _Repository = new EfVoteRepository();
+        }
 
-        public Movie? GetMove(int voteId) => Repository.GetMovie(voteId);
+        public Vote AddVoteToMovie(int movieId, Vote vote)
+        {
+            Movie movie = _Repository.Context.Movies.Find(movieId);
+            if (movie == null)
+                return null;
+            vote.Movie = movie;
+            return _Repository.Add(vote);
+        }
+
+        public Movie? GetMovie(int voteId) => _Repository.GetMovie(voteId);
     }
 }

@@ -1,51 +1,49 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 
 namespace MoviesApp.Entity
 {
     [Table("Movie")]
     public class Movie : BaseEntity
     {
-        [JsonPropertyName("adult")]
+        [JsonProperty("adult")]
         public bool IsAdult { get; set; }
 
-        [JsonPropertyName("backdrop_path")]
-        public string BackdropPath { get; set; }
+        [JsonProperty("backdrop_path")]
+        public string? BackdropPath { get; set; }
 
-        [JsonPropertyName("genre_ids")]
-        public string GenreIds { get; set; }
+        [JsonProperty("genre_ids")]
+        public IEnumerable<int> GenreIds { get; set; }
 
-        [JsonPropertyName("original_language")]
+        [JsonProperty("original_language")]
         public string OriginalLanguage { get; set; }
 
-        [JsonPropertyName("original_title")]
+        [JsonProperty("original_title")]
         public string OriginalTitle { get; set; }
 
-        [JsonPropertyName("overview")]
+        [JsonProperty("overview")]
         public string Overview { get; set; }
 
-        [JsonPropertyName("popularity")]
-        public int Popularity { get; set; }
+        [JsonProperty("popularity")]
+        public double Popularity { get; set; }
 
-        [JsonPropertyName("poster_path")]
-        public string PosterPath { get; set; }
+        [JsonProperty("poster_path")]
+        public string? PosterPath { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [DataType(DataType.Date)]
-        [JsonPropertyName("release_date")]
+        [JsonProperty("release_date"), DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ReleaseDate { get; set; }
 
-        [JsonPropertyName("title")]
+        [JsonProperty("title")]
         public string Title { get; set; }
 
-        [JsonPropertyName("video")]
+        [JsonProperty("video")]
         public bool IsVideo { get; set; }
 
-        [InverseProperty("Movie")]
         [JsonIgnore]
-        public ICollection<Vote> Votes { get; set; }
+        public double VoteAverage => Votes?.Average(x => x.Point) ?? 0;
 
-        public Movie() => Votes = new HashSet<Vote>();
+        [JsonIgnore]
+        public ICollection<Vote> Votes { get; set; } = new HashSet<Vote>();
     }
 }

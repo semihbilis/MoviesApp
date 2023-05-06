@@ -13,5 +13,14 @@ namespace MoviesApp.DataAccess
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer($"Server=.;Database=MoviesApp;Trusted_Connection=True;TrustServerCertificate=True;");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Movie>()
+                .Property(x => x.GenreIds)
+                .HasConversion(x => string.Join(",", x),
+                               x => x.Split(",", StringSplitOptions.RemoveEmptyEntries).Select(int.Parse));
+        }
     }
 }

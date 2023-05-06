@@ -1,20 +1,20 @@
 ﻿using MoviesApp.Entity;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace MoviesApp.Business.Model
 {
-    internal class Response
+    public class Response
     {
-        [JsonPropertyName("page")]
+        [JsonProperty("page")]
         public int Page { get; set; }
 
-        [JsonPropertyName("results")]
+        [JsonProperty("results")]
         public IEnumerable<Movie> Movies { get; set; }
 
-        [JsonPropertyName("total_pages")]
+        [JsonProperty("total_pages")]
         public int TotalPageCount { get; set; }
 
-        [JsonPropertyName("total_results")]
+        [JsonProperty("total_results")]
         public int TotalItemCount { get; set; }
     }
 }

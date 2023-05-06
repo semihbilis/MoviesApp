@@ -1,14 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MoviesApp.Entity
 {
     public abstract class BaseEntity : IEntity
     {
-        [Key]
+        [JsonIgnore, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public int CreatedById { get; set; }
+
+        [JsonIgnore, DisplayFormat(DataFormatString = "{0:yyyy-MM-dd-T-HH:mm:ss}", ApplyFormatInEditMode = true)]
         public DateTime CreateDate { get; set; }
-        public DateTime? UpdateDate { get; set; }
+
+        [JsonIgnore, DisplayFormat(DataFormatString = "{0:yyyy-MM-dd-T-HH:mm:ss}", ApplyFormatInEditMode = true)]
+        public DateTime? LastUpdateDate { get; set; }
 
         public BaseEntity()
         {
@@ -19,7 +24,7 @@ namespace MoviesApp.Entity
     public interface IEntity
     {
         int Id { get; set; }
-        int CreatedById { get; set; }
-        DateTime? UpdateDate { get; set; }
+        DateTime CreateDate { get; set; }
+        DateTime? LastUpdateDate { get; set; }
     }
 }

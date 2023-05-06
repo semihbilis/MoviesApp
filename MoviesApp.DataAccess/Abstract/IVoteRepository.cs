@@ -2,7 +2,7 @@
 
 namespace MoviesApp.DataAccess.Abstract
 {
-    public interface IVoteRepository : IEntityRepository<Vote>
+    public interface IVoteRepository : IRepositoryBase<Vote, AppDbContext>
     {
         Movie? GetMovie(int voteId);
     }

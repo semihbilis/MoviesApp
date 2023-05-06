@@ -4014,6 +4014,9 @@
       "MoviesApp.Entity/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
         "compile": {
           "bin/placeholder/MoviesApp.Entity.dll": {}
         },
@@ -11582,6 +11585,7 @@
       "MoviesApp.Business >= 1.0.0",
       "MoviesApp.Entity >= 1.0.0",
       "NSwag.AspNetCore >= 13.19.0",
+      "Newtonsoft.Json >= 13.0.3",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -11658,6 +11662,10 @@
           "NSwag.AspNetCore": {
             "target": "Package",
             "version": "[13.19.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

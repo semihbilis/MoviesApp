@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cGuuRD9lipsmffrMkITOm1NM+SQ/kaXfucw8uejcfQ5ZoSSYbAWWxSGE5Dq/5Br31BDxe67S3RHe04rPtyCCFg==",
+  "dgSpecHash": "XLO0CKEd9HB9GYTDGy8cpW6vd/8fpg6Du6xyqZtiZ76fOvX4JYTyAwPvg1WvpXOtMddZknn2QdLDSgzu4eZZqQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\aDell\\source\\repos\\MoviesApp\\MoviesApp.Entity\\MoviesApp.Entity.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\aDell\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
